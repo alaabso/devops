@@ -1,4 +1,4 @@
-name: CI_PIPELILNE
+name: CI_PIPELINE
 
 on:
   push:
@@ -8,17 +8,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout Code
-      uses: actions/checkout@v5
+    # 'steps' is now correctly indented under 'build'
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4 # Updated to v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20 # Updated to a supported LTS version
 
-    - name: Istall dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run tests
-      run: npm test
+      - name: Run tests
+        run: npm test
