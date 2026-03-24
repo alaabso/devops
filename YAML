@@ -1,0 +1,11 @@
+YAML
+
+name 			//Workfow/job title
+on				//defines triggers, such as push, PR
+jobs			//Define jobs, their OS, and steps
+steps			//Sequential commands or actions
+run				//Shell commands to execute
+uses			//if you want to use pre built actions
+with			//Pass params to actions
+env				//Set environment variables
+needs			//make one job depend on anothern 

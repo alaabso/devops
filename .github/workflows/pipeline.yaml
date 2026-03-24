@@ -9,16 +9,16 @@ jobs:
     runs-on: ubuntu-latest
 
   steps:
-    - name: Checkout_Code
+    - name: Checkout Code
       uses: actions/checkout@v5
 
-    - name: Set_up_Node.js
+    - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 16
 
-    - name: Istall_dependencies
+    - name: Istall dependencies
       run: npm install
 
-    - name: Run_tests
+    - name: Run tests
       run: npm test
