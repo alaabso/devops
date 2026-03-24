@@ -1,0 +1,24 @@
+name: CI_PIPELILNE
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: Checkout_Code
+      uses: actions/checkout@v5
+
+    - name: Set_up_Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - name: Istall_dependencies
+      run: npm install
+
+    - name: Run_tests
+      run: npm test
